@@ -106,7 +106,7 @@ public class AttrHider extends JavaPlugin implements Listener {
 						event.setPacket(event.getPacket().deepClone());
 						StructureModifier<List<WrappedWatchableObject>> watcher = event.getPacket().getWatchableCollectionModifier();
 					  	for (WrappedWatchableObject watch : watcher.read(0)) {
-							if ((watch.getIndex() == 6) && (((Float)watch.getValue()).floatValue() > 0.0F)) {
+							if ((watch.getIndex() == 7) && (((Float)watch.getValue()).floatValue() > 0.0F)) {
 								watch.setValue(20f);
 							}
 				    	}
