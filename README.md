@@ -3,6 +3,10 @@ AttrHider
 
 Stops Bukkit Minecraft server from sending enchantment, item damage and potion duration data. 
 
-Currently updated for Bukkit 1.7.2 but is only reliant on Bukkit API and NBT parsers so might work on other versions.
+Updated for Spigot 1.10.2 as of August 13, 2016.
 
-Note: Enchantment spoofing is currently non-functioning.
+## Description
+
+Minecraft servers send packets containing data about other players to Minecraft clients. Some of this data is not necessarily needed by the client, such as potion durations, equipment enchantment types, and health. The vanilla Minecraft client does not display these for other entities other than the player themself, but hacked clients can. This gives an edge to players with hacked clients over those who use the default client, especially in PvP situations. 
+
+AttrHider solves this by modifying outgoing packets from the server that concern potion durations, equipment enchantments, and entity health. Data that clients do not need to know about are replaced with fake values. Players using default clients will not see any differences, but players using hacked clients will see false information.
