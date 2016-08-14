@@ -1,0 +1,6 @@
+name: ${name}
+main: ${groupId}.${name}
+version: ${version}
+description: ${description}
+author: Squeenix
+depend: [ProtocolLib]

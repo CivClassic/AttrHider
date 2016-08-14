@@ -1,6 +1,0 @@
-name: AttrHider
-main: com.civpvp.attrhider.AttrHider
-version: 1.0.2
-description: Hides various armour and player attributes, such as enchantments and armour damage, to the client 
-author: Squeenix
-depend: [ProtocolLib]
