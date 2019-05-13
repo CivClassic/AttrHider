@@ -3,7 +3,7 @@ AttrHider
 
 Stops Bukkit Minecraft server from sending enchantment, item damage and potion duration data. 
 
-Updated for Spigot 1.10.2 as of August 13, 2016.
+Updated for Spigot 1.12.2 as of May 13th, 2019 thanks to Okx (https://github.com/okx-code/MetaHider)
 
 ## Description
 
