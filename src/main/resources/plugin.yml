@@ -2,5 +2,5 @@ name: ${name}
 main: ${groupId}.${name}
 version: ${version}
 description: ${description}
-author: Squeenix, Okx
+authors: [Squeenix, Okx]
 depend: [ProtocolLib]
