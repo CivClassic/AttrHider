@@ -63,7 +63,7 @@ public class AttrHider extends JavaPlugin {
             LeatherArmorMeta lam = (LeatherArmorMeta) item.getItemMeta();
             colour = lam.getColor();
           }
-          ItemStack newItem = new ItemStack(item.getType(), 1, item.getDurability());
+          ItemStack newItem = new ItemStack(item.getType(), 1, (short) 420);
           if (meta.hasEnchants()) {
             newItem.addEnchantment(Enchantment.DURABILITY, 1);
           }
