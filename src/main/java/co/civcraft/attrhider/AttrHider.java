@@ -132,7 +132,7 @@ public class AttrHider extends JavaPlugin {
           StructureModifier<List<WrappedWatchableObject>> modifier = packet.getWatchableCollectionModifier();
           List<WrappedWatchableObject> read = modifier.read(0);
 
-          if (player.getEntityId() == entity.getEntityId()
+          if (player.getUniqueId().equals(entity.getUniqueId())
               || !(entity instanceof LivingEntity)
               || entity instanceof EnderDragon
               || entity instanceof Wither
