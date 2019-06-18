@@ -48,10 +48,12 @@ public class AttrHider extends JavaPlugin {
           if (!shouldBeObfuscated(item.getType())) {
             // remove some meta information for all items
             ItemMeta meta = item.getItemMeta();
-            meta.setLore(null);
-            meta.setDisplayName(null);
-            meta.setUnbreakable(false);
-            item.setItemMeta(meta);
+            if(meta != null) {
+	            meta.setLore(null);
+	            meta.setDisplayName(null);
+	            meta.setUnbreakable(false);
+	            item.setItemMeta(meta);
+            }
             packet.getItemModifier().write(0, item);
             return;
           }
