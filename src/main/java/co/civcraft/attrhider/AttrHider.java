@@ -65,7 +65,7 @@ public class AttrHider extends JavaPlugin {
             LeatherArmorMeta lam = (LeatherArmorMeta) item.getItemMeta();
             colour = lam.getColor();
           }
-          ItemStack newItem = new ItemStack(item.getType(), 1, (short) 420);
+          ItemStack newItem = new ItemStack(item.getType(), 1);
           if (meta.hasEnchants()) {
             newItem.addEnchantment(Enchantment.DURABILITY, 1);
           }
@@ -164,35 +164,35 @@ public class AttrHider extends JavaPlugin {
         || type == Material.IRON_CHESTPLATE
         || type == Material.IRON_LEGGINGS
         || type == Material.IRON_BOOTS
-        || type == Material.GOLD_HELMET
-        || type == Material.GOLD_CHESTPLATE
-        || type == Material.GOLD_LEGGINGS
-        || type == Material.GOLD_BOOTS
+        || type == Material.GOLDEN_HELMET
+        || type == Material.GOLDEN_CHESTPLATE
+        || type == Material.GOLDEN_LEGGINGS
+        || type == Material.GOLDEN_BOOTS
         || type == Material.LEATHER_HELMET
         || type == Material.LEATHER_CHESTPLATE
         || type == Material.LEATHER_LEGGINGS
         || type == Material.LEATHER_BOOTS
         || type == Material.DIAMOND_SWORD
-        || type == Material.GOLD_SWORD
+        || type == Material.GOLDEN_SWORD
         || type == Material.IRON_SWORD
         || type == Material.STONE_SWORD
-        || type == Material.WOOD_SWORD
+        || type == Material.WOODEN_SWORD
         || type == Material.DIAMOND_AXE
-        || type == Material.GOLD_AXE
+        || type == Material.GOLDEN_AXE
         || type == Material.IRON_AXE
         || type == Material.STONE_AXE
-        || type == Material.WOOD_AXE
+        || type == Material.WOODEN_AXE
         || type == Material.DIAMOND_PICKAXE
-        || type == Material.GOLD_PICKAXE
+        || type == Material.GOLDEN_PICKAXE
         || type == Material.IRON_PICKAXE
         || type == Material.STONE_PICKAXE
-        || type == Material.WOOD_PICKAXE
-        || type == Material.DIAMOND_SPADE
-        || type == Material.GOLD_SPADE
-        || type == Material.IRON_SPADE
-        || type == Material.STONE_SPADE
-        || type == Material.WOOD_SPADE
-        || type == Material.FIREWORK
+        || type == Material.WOODEN_PICKAXE
+        || type == Material.DIAMOND_SHOVEL
+        || type == Material.GOLDEN_SHOVEL
+        || type == Material.IRON_SHOVEL
+        || type == Material.STONE_SHOVEL
+        || type == Material.WOODEN_SHOVEL
+        || type == Material.FIREWORK_ROCKET
         || type == Material.WRITTEN_BOOK
         || type == Material.ENCHANTED_BOOK;
   }
