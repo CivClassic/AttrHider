@@ -143,7 +143,7 @@ public class AttrHider extends JavaPlugin {
           }
 
           for (WrappedWatchableObject obj : read) {
-            if (obj.getIndex() == 7) {
+            if (obj.getIndex() == 8) {
               float value = (float) obj.getValue();
               if (value > 0) {
                 obj.setValue(1f);
