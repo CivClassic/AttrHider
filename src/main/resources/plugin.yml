@@ -4,3 +4,4 @@ version: ${version}
 description: ${description}
 authors: [Squeenix, Okx]
 depend: [ProtocolLib]
+api-version: 1.14
