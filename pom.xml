@@ -3,6 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>com.github.civclassic</groupId>
+		<artifactId>civclassic-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
 	<groupId>co.civcraft.attrhider</groupId>
 	<artifactId>Attrhider</artifactId>
 	<version>1.3.0</version>
@@ -12,12 +18,7 @@
     Hides various equipment and player attributes, such as enchantments,
     equipment durability, and potion effects, from Minecraft clients.
   </description>
-	<url>https://github.com/Civcraft/AttrHider</url>
-
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+	<url>https://github.com/Civclassic/AttrHider</url>
 
 	<dependencies>
 		<dependency>
@@ -34,27 +35,8 @@
 
 	<repositories>
 		<repository>
-			<id>spigot-repo</id>
-			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-		</repository>
-		<repository>
 			<id>dmulloy2-repo</id>
 			<url>http://repo.dmulloy2.net/content/groups/public/</url>
 		</repository>
 	</repositories>
-
-	<build>
-		<resources>
-			<resource>
-				<directory>${basedir}</directory>
-				<includes>
-					<include>LICENSE.txt</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-	</build>
 </project>
