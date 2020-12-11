@@ -1,46 +1,48 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.github.civclassic</groupId>
-		<artifactId>civclassic-parent</artifactId>
-		<version>1.0.0</version>
-	</parent>
+  <parent>
+    <groupId>com.github.civclassic</groupId>
+    <artifactId>civclassic-parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
 
-	<groupId>co.civcraft.attrhider</groupId>
-	<artifactId>Attrhider</artifactId>
-	<version>1.4.0</version>
+  <groupId>co.civcraft.attrhider</groupId>
+  <artifactId>Attrhider</artifactId>
+  <version>1.4.0</version>
 
-	<name>AttrHider</name>
-	<description>
+  <name>AttrHider</name>
+  <description>
     Hides various equipment and player attributes, such as enchantments,
     equipment durability, and potion effects, from Minecraft clients.
   </description>
-	<url>https://github.com/Civclassic/AttrHider</url>
+  <url>https://github.com/Civclassic/AttrHider</url>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.comphenix.protocol</groupId>
-			<artifactId>ProtocolLib</artifactId>
-			<version>4.6.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.spigotmc</groupId>
-			<artifactId>spigot-api</artifactId>
-			<version>1.16.1-R0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.16.1-R0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.comphenix.protocol</groupId>
+      <artifactId>ProtocolLib</artifactId>
+      <version>4.6.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 
-	<repositories>
-		<repository>
-			<id>dmulloy2-repo</id>
-			<url>http://repo.dmulloy2.net/content/groups/public/</url>
-		</repository>
-		<repository>
-			<id>civ-jenkins</id>
-			<url>https://repo.civclassic.com/repository/internal/</url>
-		</repository>
-	</repositories>
+  <repositories>
+    <repository>
+      <id>dmulloy2-repo</id>
+      <url>http://repo.dmulloy2.net/content/groups/public/</url>
+    </repository>
+    <repository>
+      <id>devoted-jenkins</id>
+      <url>https://build.devotedmc.com/plugin/repository/everything/</url>
+    </repository>
+  </repositories>
+
 </project>
