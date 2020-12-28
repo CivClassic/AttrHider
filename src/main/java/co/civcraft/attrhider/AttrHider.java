@@ -7,7 +7,12 @@ import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.reflect.StructureModifier;
+import com.comphenix.protocol.wrappers.WrappedDataWatcher;
+import com.comphenix.protocol.wrappers.WrappedDataWatcher.WrappedDataWatcherObject;
 import com.comphenix.protocol.wrappers.WrappedWatchableObject;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -22,8 +27,6 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionData;
-
-import java.util.List;
 
 public class AttrHider extends JavaPlugin {
   @Override
@@ -130,9 +133,13 @@ public class AttrHider extends JavaPlugin {
           if (player.hasPermission("attrhider.bypass")) {
             return;
           }
+          if (packet.getMeta("special").isPresent()) {
+          	return;
+		  }
+
           Entity entity = event.getPacket().getEntityModifier(event).read(0);
           StructureModifier<List<WrappedWatchableObject>> modifier = packet.getWatchableCollectionModifier();
-          List<WrappedWatchableObject> read = modifier.read(0);
+          List<WrappedWatchableObject> read = new ArrayList<>(modifier.read(0));
 
           if (entity == null || player.getUniqueId().equals(entity.getUniqueId())
             	|| entity.getEntityId() == player.getEntityId()
@@ -143,14 +150,28 @@ public class AttrHider extends JavaPlugin {
             return;
           }
 
-          for (WrappedWatchableObject obj : read) {
-            if (obj.getIndex() == 8) {
-              float value = (float) obj.getValue();
-              if (value > 0) {
-                obj.setValue(1f);
-              }
-            }
-          }
+			for (int i = 0; i < read.size(); i++) {
+				WrappedWatchableObject obj = read.get(i);
+				if (obj.getIndex() == 8) {
+					float value = (float) obj.getValue();
+					if (value > 0) {
+						read.set(i, new WrappedWatchableObject(new WrappedDataWatcherObject(8, WrappedDataWatcher.Registry.get(Float.class)), 1f));
+					}
+				}
+			}
+
+			event.setCancelled(true);
+
+			final PacketContainer container = ProtocolLibrary.getProtocolManager().createPacket(PacketType.Play.Server.ENTITY_METADATA);
+			container.setMeta("special", true);
+			container.getEntityModifier(event).write(0, entity);
+			container.getWatchableCollectionModifier().write(0, read);
+
+			try {
+				ProtocolLibrary.getProtocolManager().sendServerPacket(event.getPlayer(), container);
+			} catch (final InvocationTargetException e) {
+				e.printStackTrace();
+			}
         }
       });
     }
