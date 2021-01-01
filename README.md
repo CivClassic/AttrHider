@@ -1,6 +1,14 @@
 AttrHider
 =========
 
+-------
+
+No longer maintained, now a part of https://github.com/civclassic/simpleadminhacks
+
+
+-------
+
+
 Stops Bukkit Minecraft server from sending enchantment, item damage and potion duration data. 
 
 Updated for Spigot 1.12.2 as of May 13th, 2019 thanks to Okx (https://github.com/okx-code/MetaHider)
